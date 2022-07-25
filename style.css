@@ -1,0 +1,23 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+#square-wrapper {
+    display: grid;
+    grid-template-columns: repeat(16,1fr);
+    gap: 5px;
+    padding: 20px;
+}
+
+.square {
+    height: 35px;
+    width: 35px;
+    background-color: aqua;
+}
+
+.square:hover {
+    cursor: pointer;
+    background-color: black;
+}
