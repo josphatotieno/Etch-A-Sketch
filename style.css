@@ -18,19 +18,29 @@
 #square-wrapper {
     display: grid;
     grid-template-columns: repeat(16,1fr);
-    /* grid-template-rows: repeat(16,1fr); */
+    /* width: 256px;
+    height: 256px;
+    display: flex;
+    flex-wrap: wrap; */
     gap: 5px;
-    padding: 20px;
 }
 
 .square,
 .new-square {
-    height: 35px;
-    width: 35px;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
     background-color: aqua;
+    /* aspect-ratio: 1; */
+    padding-bottom: 100%;
+    padding-right: 100%;
 }
 
-.square:hover {
+.square:nth-child(even) {
+    background-color: rgb(166, 206, 206);
+}
+
+/* .square:hover {
     cursor: pointer;
     background-color: black;
-}
+} */
