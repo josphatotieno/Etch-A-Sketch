@@ -13,7 +13,7 @@ document.querySelector('#btn').addEventListener('click', () => {
     const numberOfSquares = prompt('Enter number of squares to create grid');
 
     if(numberOfSquares !== '') {
-        createGridOfSquares(numberOfSquares)
+        createGridOfSquares(numberOfSquares);
     }   
 })
 
@@ -25,7 +25,7 @@ function createGridOfSquares(squares) {
     while(squareDivs > 0) {
         const div = document.createElement('div');
         div.className = 'square';
-        squaresWrapper.style.gridTemplateColumns = `repeat(${squares},1fr)`;
+        squaresWrapper.style.gridTemplateColumns = `repeat(${squares},30px)`;
         
         squaresWrapper.appendChild(div);
 
@@ -36,16 +36,20 @@ function createGridOfSquares(squares) {
 const random1 = Math.floor(Math.random() * 256);
 const random2 = Math.floor(Math.random() * 256);
 const random3 = Math.floor(Math.random() * 256);
+// let pass = 10;
+// let opacity = 0
 
-document.querySelectorAll('.square').forEach(square => {
-    square.addEventListener('mouseover', ()=> {
-        square.style.backgroundColor = `rgb(${random1},${random2},${random3})`;
-    });
+squaresWrapper.addEventListener('mouseover', (e) => {
+    if(e.target.className === 'square') {
+        e.target.style.backgroundColor = `rgb(${random1},${random2},${random3})`;
+    }
+});
 
-    square.addEventListener('mouseout', ()=> {
-        square.style.backgroundColor = `rgb(${random1},${random2},${random3})`;
-    })
-})
+squaresWrapper.addEventListener('mouseout', (e) => {
+    if(e.target.className === 'square') {
+        e.target.style.backgroundColor = `rgb(${random1},${random2},${random3})`;
+    }
+});
 
 
 console.log(random1,random2,random3);
