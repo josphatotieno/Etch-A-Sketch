@@ -15,7 +15,7 @@ document.querySelector('#btn').addEventListener('click', () => {
     if(numberOfSquares !== '') {
         createGridOfSquares(numberOfSquares);
     }   
-})
+});
 
 function createGridOfSquares(squares) {
     let squareDivs = squares * squares;
@@ -36,8 +36,6 @@ function createGridOfSquares(squares) {
 const random1 = Math.floor(Math.random() * 256);
 const random2 = Math.floor(Math.random() * 256);
 const random3 = Math.floor(Math.random() * 256);
-// let pass = 10;
-// let opacity = 0
 
 squaresWrapper.addEventListener('mouseover', (e) => {
     if(e.target.className === 'square') {
@@ -50,7 +48,6 @@ squaresWrapper.addEventListener('mouseout', (e) => {
         e.target.style.backgroundColor = `rgb(${random1},${random2},${random3})`;
     }
 });
-
 
 console.log(random1,random2,random3);
 
