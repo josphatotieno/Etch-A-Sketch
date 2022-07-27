@@ -37,11 +37,11 @@ function createGridOfSquares(squares) {
     }
 }
 
-const random1 = Math.floor(Math.random() * 256);
-const random2 = Math.floor(Math.random() * 256);
-const random3 = Math.floor(Math.random() * 256);
-
 document.querySelector('#btn2').addEventListener('click', () => {
+    const random1 = Math.floor(Math.random() * 256);
+    const random2 = Math.floor(Math.random() * 256);
+    const random3 = Math.floor(Math.random() * 256);
+
     squaresWrapper.addEventListener('mouseover', (e) => {
         if(e.target.className === 'square') {
             e.target.style.backgroundColor = `rgb(${random1},${random2},${random3})`;
@@ -56,18 +56,6 @@ document.querySelector('#btn2').addEventListener('click', () => {
 
 })
 
-// squaresWrapper.addEventListener('mouseover', (e) => {
-//     if(e.target.className === 'square') {
-//         e.target.style.backgroundColor = `rgb(${random1},${random2},${random3})`;
-//     }
-// });
-
-// squaresWrapper.addEventListener('mouseout', (e) => {
-//     if(e.target.className === 'square') {
-//         e.target.style.backgroundColor = `rgb(${random1},${random2},${random3})`;
-//     }
-// });
-
 document.querySelector('#colorpicker').addEventListener('input', (e) => {
     
     const colorPicked = e.target.value;
@@ -81,6 +69,22 @@ document.querySelector('#colorpicker').addEventListener('input', (e) => {
     squaresWrapper.addEventListener('mouseout', (e) => {
         if(e.target.className === 'square') {
             e.target.style.backgroundColor = `${colorPicked}`;
+        }
+    });
+})
+
+document.querySelector('#btn3').addEventListener('click', (e) => {
+    
+    squaresWrapper.addEventListener('mouseover', (e) => {
+        if(e.target.className === 'square') {
+            e.target.style.backgroundColor = 'rgb(235, 235, 235)';
+            e.target.style.transition = 'background-color .5s ease-in-out';
+        }
+    });
+    
+    squaresWrapper.addEventListener('mouseout', (e) => {
+        if(e.target.className === 'square') {
+            e.target.style.backgroundColor = 'rgb(235, 235, 235)';
         }
     });
 })
