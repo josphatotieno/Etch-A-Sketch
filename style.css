@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC&display=swap');
+
 * {
     margin: 0%;
     padding: 0%;
@@ -6,6 +8,7 @@
 
 body {
     background-color: rgb(0, 0, 0);
+    font-family: 'Cormorant SC', serif;;
 }
 
 header {
@@ -26,7 +29,6 @@ header {
 
 .btn {
     cursor: pointer;
-    margin: 20px 0 40px 20px;
     border: none;
     outline: none;
     padding: 13px;
@@ -37,6 +39,11 @@ header {
 
 .btn:focus {
     transform: scale(.97);
+}
+
+.btn,
+#color-pickerContainer {
+    margin-bottom: 30px;
 }
 
 #color-pickerContainer {
@@ -50,6 +57,10 @@ label {
     margin-right: 5px;
 }
 
+#btn3 {
+    display: block;
+}
+
 #square-wrapper {
     display: grid;
     grid-template-columns: repeat(16,minmax(0px,1fr));
@@ -61,6 +72,7 @@ label {
 
 .square {
     cursor: pointer;
+    transition: background-color .3s ease-in-out;
     background-color: rgb(235, 235, 235);
 }
 
